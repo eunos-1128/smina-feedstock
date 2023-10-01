@@ -13,7 +13,7 @@ source:
       - cmake.patch
 
 build:
-  number: 0
+  number: 1
   script:
     - env GIT_HASH={{ commit }} bash {{ RECIPE_DIR }}/build_smina.sh    # [unix]
     - set GIT_HASH={{ commit }}  &&  {{ RECIPE_DIR }}\build_smina.bat   # [win]
@@ -26,11 +26,10 @@ requirements:
     - make     # [unix]
     - ninja    # [win]
   host:
-    - boost-cpp
+    - libboost-devel
     - eigen
     - openbabel
   run:
-    - boost-cpp
     - openbabel
 
 test:
