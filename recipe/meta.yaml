@@ -27,7 +27,7 @@ requirements:
     - make     # [unix]
     - ninja    # [win]
   host:
-    - libboost-devel >=1.82,<1.83
+    - libboost-devel 1.82.*
     - eigen
     - openbabel
   run:
