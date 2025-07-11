@@ -27,6 +27,7 @@ requirements:
     - cmake
     - make     # [unix]
     - ninja    # [win]
+    - sed      # [osx]
   host:
     # Smina not compatible with more recent libboost versions
     # see https://github.com/conda-forge/smina-feedstock/pull/3
