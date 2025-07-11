@@ -1,12 +1,13 @@
 diff --git a/src/server/MinimizationQuery.cpp b/src/server/MinimizationQuery.cpp
-index 3a8b824..2471cd7 100644
+index 3a8b824..9471d09 100644
 --- a/src/server/MinimizationQuery.cpp
 +++ b/src/server/MinimizationQuery.cpp
-@@ -5,6 +5,12 @@
+@@ -5,6 +5,13 @@
   *      Author: dkoes
   */
  
 +#ifdef _WIN32
++#define WIN32_LEAN_AND_MEAN
 +#include <windows.h>
 +#else
 +#include <unistd.h>
@@ -15,7 +16,7 @@ index 3a8b824..2471cd7 100644
  #include <sstream>
  
  #include "MinimizationQuery.h"
-@@ -244,7 +250,13 @@ void MinimizationQuery::thread_minimize(MinimizationQuery* q)
+@@ -244,7 +251,13 @@ void MinimizationQuery::thread_minimize(MinimizationQuery* q)
  			if (q->stopQuery) //cancelled
  				return;
  			else if (ligands.size() == 0) //nothing to do yet
@@ -29,7 +30,7 @@ index 3a8b824..2471cd7 100644
  			else //let's minimize!
  			{
  				vector<Result*> results;
-@@ -280,7 +292,7 @@ void MinimizationQuery::thread_minimize(MinimizationQuery* q)
+@@ -280,7 +293,7 @@ void MinimizationQuery::thread_minimize(MinimizationQuery* q)
  				}
  
  				//add computed results
@@ -38,7 +39,7 @@ index 3a8b824..2471cd7 100644
  				for (unsigned i = 0, n = results.size(); i < n; i++)
  				{
  					results[i]->position = q->allResults.size();
-@@ -397,7 +409,7 @@ unsigned MinimizationQuery::loadResults(const MinimizationFilters& filter,
+@@ -397,7 +410,7 @@ unsigned MinimizationQuery::loadResults(const MinimizationFilters& filter,
  			}
  		}
  		swap(results,tmpres);
