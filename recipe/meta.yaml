@@ -11,6 +11,7 @@ source:
     sha256: 4fdb9a3d0293ceb868b1c492b8e6fb1673948638ccd382174c41e68a443aa795
     patches:
       - cmake.patch
+      - MinimizationQuery.cpp.patch
 
 build:
   number: 0
