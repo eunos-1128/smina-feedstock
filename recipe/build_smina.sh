@@ -10,7 +10,7 @@ echo "const char* GIT_REV=\"${GIT_HASH}\";"    >  version.cpp
 echo "const char* GIT_TAG=\"${PKG_VERSION}\";" >> version.cpp
 echo "const char* GIT_BRANCH=\"conda-forge\";" >> version.cpp
 
-sed -i.bak '/project(smina)/a find_package(Threads REQUIRED)' CMakeLists.txt
+sed -i.bak '/project(smina)/a find_package(Threads REQUIRED)' "${SRC_DIR}/CMakeLists.txt"
 
 cmake ${SRC_DIR} ${CMAKE_ARGS} \
     -DCMAKE_BUILD_TYPE=Release \
